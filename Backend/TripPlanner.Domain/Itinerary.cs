@@ -6,19 +6,20 @@ public class Itinerary
     public int Day { get; set; }
     public string City { get; set; } = string.Empty;
     public string Country { get; set; } = string.Empty;
-    public TransportType[] Transport { get; set; }
-    public Activity[] Activities { get; set; }
+    public Guid TransportTypeId { get; set; }
+    public List<Activity> Activities { get; set; } = new List<Activity>();
     public float EstimatedCost { get; set; }
 
-    public Itinerary(Guid id, int day, string city, string country, TransportType[] transport, Activity[] activities,
-        float estimatedCost)
+    public Itinerary(int day, string city, string country, Guid transportTypeId, float estimatedCost)
     {
-        Id = id;
         Day = day;
         City = city;
         Country = country;
-        Transport = transport;
-        Activities = activities;
+        TransportTypeId = transportTypeId;
         EstimatedCost = estimatedCost;
+        Activities = new List<Activity>();
     }
+    
+    protected Itinerary() { }
+
 }

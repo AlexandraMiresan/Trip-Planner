@@ -10,7 +10,6 @@ public class TransportType
     public float Cost { get; set; }
 
     public Domain.TransportType ToDomain() => new(
-        Id,
         Mode,
         From,
         To,

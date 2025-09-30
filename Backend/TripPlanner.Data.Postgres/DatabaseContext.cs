@@ -28,9 +28,6 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbCont
             .HasConversion<string>();
 
         modelBuilder.Entity<Itinerary>(entity =>
-            entity.HasMany(t => t.Transport));
-
-        modelBuilder.Entity<Itinerary>(entity =>
             entity.HasMany(t => t.Activities));
     }
 }

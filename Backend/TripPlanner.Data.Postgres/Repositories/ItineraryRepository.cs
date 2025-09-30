@@ -35,7 +35,7 @@ public class ItineraryRepository(DatabaseContext context) : IItineraryRepository
         entity.Day = itinerary.Day;
         entity.City = itinerary.City;
         entity.Country = itinerary.Country;
-        entity.Transport = itinerary.Transport;
+        entity.TransportTypeId = itinerary.TransportTypeId;
         entity.Activities = itinerary.Activities;
         entity.EstimatedCost = itinerary.EstimatedCost;
         

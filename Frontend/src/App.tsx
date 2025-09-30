@@ -1,5 +1,5 @@
 function App() {
-    return <>test app</>;
+    return <>tripPlanner</>;
 }
 
 export default App;

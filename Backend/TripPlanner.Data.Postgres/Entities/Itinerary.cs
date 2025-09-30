@@ -8,17 +8,15 @@ public class Itinerary
     public int Day { get; set; }
     public string City { get; set; }
     public string Country { get; set; }
-    public Domain.TransportType[] Transport { get; set; }
-    public Domain.Activity[] Activities { get; set; }
+    public Guid TransportTypeId { get; set; }
+    public List<Domain.Activity> Activities { get; set; }
     public float EstimatedCost { get; set; }
 
     public Domain.Itinerary ToDomain() => new(
-        Id,
         Day,
         City,
         Country,
-        Transport,
-        Activities,
+        TransportTypeId,
         EstimatedCost
     );
 
@@ -28,7 +26,7 @@ public class Itinerary
         Day = itinerary.Day,
         City = itinerary.City,
         Country = itinerary.Country,
-        Transport = itinerary.Transport,
+        TransportTypeId = itinerary.TransportTypeId,
         Activities = itinerary.Activities,
         EstimatedCost = itinerary.EstimatedCost
     };

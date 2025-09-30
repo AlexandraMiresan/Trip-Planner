@@ -10,16 +10,14 @@ public class Trip
     public int Days { get; set; }
     public float Price { get; set; }
     public Domain.Trip.TripCategory Category { get; set; }
-    public Domain.Itinerary[] Itinerary { get; set; }
+    public List<Domain.Itinerary> Itinerary { get; set; }
 
     public Domain.Trip ToDomain() => new(
-        Id,
         Origin,
         Destination,
         Days,
         Price,
-        Category,
-        Itinerary
+        Category
     );
 
     public static Trip FromDomain(Domain.Trip trip) => new()

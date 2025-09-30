@@ -18,9 +18,9 @@ public class TransportType
     public int DurationMinutes  { get; set; }
     public float Cost { get; set; } //EURO
 
-    public TransportType(Guid id, TransportMode mode, string from, string to, int durationMinutes, float cost)
+    public TransportType(TransportMode mode, string from, string to, int durationMinutes, float cost)
     {
-        Id = id;
+        Id = Guid.NewGuid();
         Mode = mode;
         From = from;
         To = to;
